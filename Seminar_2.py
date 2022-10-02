@@ -1,3 +1,5 @@
+from asyncore import write
+from datetime import date
 import os
 from unicodedata import name
 os.system("cls")
@@ -42,20 +44,55 @@ os.system("cls")
 
 
 
-n = int(input("Введите число: "))
-def generate_list(n):
-    result = []
-    for i in range(1, n+1):
-        result.append(round((1 + 1/i)**i))
-    return result
-number_list = generate_list(n)
-print(f"Для n = {n}: {number_list} -> {sum(number_list)}")
+# n = int(input("Введите число: "))
+# def generate_list(n):
+#     result = []
+#     for i in range(1, n+1):
+#         result.append(round((1 + 1/i)**i))
+#     return result
+# number_list = generate_list(n)
+# print(f"Для n = {n}: {number_list} -> {sum(number_list)}")
 ##############################################
 
+# Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение
+#элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+
+# x=['2', '5']
+# data=open('file.txt', 'w')
+# data.write('3 \n')
+# data.write('5')
+# data.close()
+
+
+
+size=int(input('Введите число '))
+num_list=list(range(-size, size+1))
+path='file.txt'
+data=open(path, 'r')
+rez=1
+for position in data:
+    rez*=num_list[int(position)]
+    data.close()
+    print(num_list)
+    print(rez)
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Реализуйте алгоритм перемешивания списка.
 
 # lst = [1, 2, 3, 4, 5]
 # print ('Исходный список :', lst)
