@@ -12,7 +12,7 @@ os.system("cls")
 # str_number=str_number.replace('.', '')       #убираем разделитель
 # list_number=list(str_number)                 #преобразовыаем строку в список чисел
 # list_num=map(int, list_number)               #делем целые числа
-# print(sum(list_num))                         #складываем числа
+# print(sum(list_num))                        
 #####################################################
 
 #Напишите программу, которая принимает на вход число N 
@@ -20,18 +20,48 @@ os.system("cls")
 #Пример:
 #пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-x=int(input('Введите число '))
-i=0
-while i<x:
-    def fact(i):
-        if i==1:
-            return 1
-        else:
-            return i*fact(i-1)
-    i+=1
-    str_fact=str(fact(i))
-    print(str_fact, sep=',', end='')
+# x=int(input('Введите число '))
+# i=0
+# while i<x:
+#     def fact(i):
+#         if i==1:
+#             return 1
+#         else:
+#             return i*fact(i-1)
+#     i+=1
+#     str_fact=str(fact(i))
+#     print(str_fact, sep=',', end='')
+
+
+##############################################################
+
+#Задайте список из n чисел последовательности $(1+\frac 1 n)^n$ и выведите на экран их сумму.
+#Пример:Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
+#Задайте список из n чисел последовательности (1 + 1/n)**n
+# и выведите на экран их сумму.
+
+
+
+n = int(input("Введите число: "))
+def generate_list(n):
+    result = []
+    for i in range(1, n+1):
+        result.append(round((1 + 1/i)**i))
+    return result
+number_list = generate_list(n)
+print(f"Для n = {n}: {number_list} -> {sum(number_list)}")
+##############################################
 
 
 
 
+
+
+# lst = [1, 2, 3, 4, 5]
+# print ('Исходный список :', lst)
+
+# for i in range(len(lst)-1, 0, -1):
+#     j = random.randint(0, i + 1) # Берем случайный индекс от 0 до i
+#     lst[i], lst[j] = lst[j], lst[i] # Меняем arr[i] с элементом случайеого индекса
+
+# print ('перемешаный список : ', lst)
