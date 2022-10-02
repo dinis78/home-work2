@@ -57,48 +57,31 @@ os.system("cls")
 # Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение
 #элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
 
-# x=['2', '5']
-# data=open('file.txt', 'w')
+
+# data=open ('file.txt', 'w')
 # data.write('3 \n')
-# data.write('5')
+# data.write('6')
 # data.close()
 
 
 
-size=int(input('Введите число '))
-num_list=list(range(-size, size+1))
-path='file.txt'
-data=open(path, 'r')
-rez=1
-for position in data:
-    rez*=num_list[int(position)]
-    data.close()
-    print(num_list)
-    print(rez)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# size=int(input('Введите число '))
+# num_list=list(range(-size, size+1))
+# path='file.txt' 
+# data=open(path, 'r') 
+# rez=1
+# for position in data:
+#     rez*=num_list[int(position)]
+#     data.close()
+#     print(num_list)
+#     print(rez)
 
 
 
 #Реализуйте алгоритм перемешивания списка.
+import random
 
-# lst = [1, 2, 3, 4, 5]
-# print ('Исходный список :', lst)
-
-# for i in range(len(lst)-1, 0, -1):
-#     j = random.randint(0, i + 1) # Берем случайный индекс от 0 до i
-#     lst[i], lst[j] = lst[j], lst[i] # Меняем arr[i] с элементом случайеого индекса
-
-# print ('перемешаный список : ', lst)
+lst = list(range(1,6))
+print ('Исходный список :', lst)
+random.shuffle(lst)
+print ('перемешаный список : ', lst)
